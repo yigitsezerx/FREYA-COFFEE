@@ -12,15 +12,13 @@ const App: React.FC = () => {
   const [videoOpacity, setVideoOpacity] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [triggerRain, setTriggerRain] = useState(0);
-  const [parallaxY, setParallaxY] = useState(0);
   const [loadingText, setLoadingText] = useState("Hikayenizi yazıyoruz...");
   
   const videoRef = useRef<HTMLVideoElement>(null);
-  const storyImageRef = useRef<HTMLDivElement>(null);
+  // Parallax ref'i kaldırıldı, artık ihtiyacımız yok.
 
   useEffect(() => {
     const fetchStory = async () => {
-      // Not: Servis dosyasında prompt'u Türkçe yapmayı unutma
       const data = await generateCoffeeStory();
       setStory(data);
       setLoading(false);
@@ -36,12 +34,7 @@ const App: React.FC = () => {
 
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 500);
-      if (storyImageRef.current) {
-        const rect = storyImageRef.current.getBoundingClientRect();
-        const speed = 0.2;
-        const offset = (window.innerHeight - rect.top) * speed;
-        setParallaxY(offset);
-      }
+      // Parallax hesaplaması kaldırıldı
     };
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -222,30 +215,35 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Story Section */}
-      <section id="story" className="min-h-screen bg-black flex flex-col lg:flex-row items-center justify-center overflow-hidden">
-        <div className="w-full lg:w-1/2 py-24 px-8 md:px-24">
-          <div className="max-w-xl mx-auto lg:ml-auto lg:mr-0">
-            <span className="text-amber-200/70 uppercase tracking-[0.5em] text-[10px] mb-8 block font-medium">Hikayemiz</span>
-            <h2 className="text-5xl md:text-7xl font-serif italic mb-12 leading-[1.2] tracking-tight">Huzurlu Anların <br/>Mimarı</h2>
-            <div className="space-y-8 text-lg font-light text-white/80 leading-[1.8] tracking-wide">
-              <p>Freya basit bir inançla doğdu: Kahve sadece bir içecek değil; toprağa bir dokunuş, bir ritüel ve kendinle baş başa kaldığın o özel andır.</p>
-              <p>Volkanik toprakların bereketini, İskandinav kavurma sanatının inceliğiyle buluşturuyoruz. Amacımız, doğaya duyduğumuz saygıyı fincanınızdaki her notada hissettirmek.</p>
-            </div>
-          </div>
-        </div>
-        <div ref={storyImageRef} className="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden">
-          {/* VİDEO DÜZELTİLDİ: Artık video tag kullanılıyor */}
+      {/* Story Section - YENİLENMİŞ TAM EKRAN TASARIM */}
+      <section id="story" className="relative w-screen h-screen overflow-hidden flex flex-col items-center justify-center">
+        {/* Arka Plan Videosu */}
+        <div className="absolute inset-0 z-0 bg-black">
           <video 
             autoPlay 
             muted 
             loop 
             playsInline
-            className="w-full h-[120%] object-cover brightness-[0.4] transition-all duration-1000 absolute left-0" 
-            style={{ transform: `translateY(${parallaxY}px)` }} 
+            className="w-full h-full object-cover brightness-[0.25]" // Okunabilirlik için parlaklık iyice kısıldı
           >
             <source src="/puck.mp4" type="video/mp4" />
           </video>
+          {/* Ekstra Koyu Katman (Overlay) */}
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+
+        {/* Yazı İçeriği */}
+        <div className="relative z-10 w-full px-8 md:px-24 flex flex-col items-center justify-center text-center max-w-5xl mx-auto">
+            <span className="text-amber-200/70 uppercase tracking-[0.5em] text-[10px] md:text-xs mb-8 block font-medium animate-fade-in opacity-0" style={{ animationDelay: '0.2s', opacity: 1 }}>
+              Hikayemiz
+            </span>
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif italic mb-12 leading-[1.1] tracking-tight animate-fade-in opacity-0" style={{ animationDelay: '0.4s', opacity: 1 }}>
+              Huzurlu Anların <br/>Mimarı
+            </h2>
+            <div className="space-y-8 text-lg md:text-xl font-light text-white/90 leading-[1.8] tracking-wide max-w-3xl mx-auto animate-fade-in opacity-0" style={{ animationDelay: '0.6s', opacity: 1 }}>
+              <p>Freya basit bir inançla doğdu: Kahve sadece bir içecek değil; toprağa bir dokunuş, bir ritüel ve kendinle baş başa kaldığın o özel andır.</p>
+              <p>Volkanik toprakların bereketini, İskandinav kavurma sanatının inceliğiyle buluşturuyoruz. Amacımız, doğaya duyduğumuz saygıyı fincanınızdaki her notada hissettirmek.</p>
+            </div>
         </div>
       </section>
 
@@ -286,7 +284,7 @@ const App: React.FC = () => {
           <p>© 2026 Freya Coffee. Tüm hakları saklıdır.</p>
           
           <div className="mt-8 md:mt-0 flex items-center justify-center">
-            {/* LOGOMARK BURADA GÜNCELLENDİ */}
+            {/* LOGOMARK */}
             <img 
                src="/menacesbrand.png" 
                alt="Freya Signature" 
