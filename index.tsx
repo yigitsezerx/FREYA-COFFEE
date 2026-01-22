@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import TVMenu from './TVMenu';
+// DÜZELTME BURADA YAPILDI: './TVMenu' yerine './components/TVMenu'
+import TVMenu from './components/TVMenu'; 
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -10,9 +11,9 @@ if (!rootElement) {
 
 const root = ReactDOM.createRoot(rootElement);
 
-// HEM normal yolu (/tv) HEM DE güvenli yolu (#tv) kontrol et
+// Hash (#) veya Path (/) kontrolü
 const path = window.location.pathname;
-const hash = window.location.hash; // URL'deki # işaretini okur
+const hash = window.location.hash;
 
 // Eğer adres "/tv" ise YA DA adresin sonunda "#tv" varsa TV Menüsünü aç
 if (path === '/tv' || path === '/tv/' || hash === '#tv') {
