@@ -75,16 +75,11 @@ const TVMenu: React.FC = () => {
           </div>
         ))}
       </div>
+      
+      {/* ALT KISIM TAMAMEN KALDIRILDI */}
 
-      {/* ALT KAYAN YAZI (Footer) */}
-      <div className="h-16 shrink-0 bg-amber-900/20 border-t border-white/5 flex items-center overflow-hidden relative z-20">
-         <div className="absolute whitespace-nowrap animate-scroll-line text-sm uppercase tracking-[0.4em] text-white/50 w-full text-center font-medium">
-            Kahvelerimiz günlük taze kavrulur • %100 Arabica Çekirdekleri • Sütlerimiz günlük olarak temin edilir • Freya Coffee Experience
-         </div>
-      </div>
     </div>
   );
 };
 
 export default TVMenu;
-
