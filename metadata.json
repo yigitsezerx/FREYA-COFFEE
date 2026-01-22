@@ -1,0 +1,8 @@
+{
+  "name": "Freya Coffee - Sensory Experience",
+  "description": "A high-end, immersive coffee experience website featuring cinematic video backgrounds, minimalist typography, and AI-driven storytelling.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
