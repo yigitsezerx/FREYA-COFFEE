@@ -273,7 +273,7 @@ const App: React.FC = () => {
         </div>
         
         <div className="mt-32 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[9px] uppercase tracking-[0.5em] text-white/20 font-medium">
-          <p>© 2024 Freya Coffee. Tüm hakları saklıdır.</p>
+          <p>© 2026 Freya Coffee. Tüm hakları saklıdır.</p>
           
           <div className="mt-8 md:mt-0 flex items-center justify-center">
             <div className="px-6 py-2.5 bg-white/[0.03] border border-white/5 rounded-sm flex items-center space-x-3 group hover:bg-white/[0.06] hover:border-amber-200/20 transition-all duration-700 cursor-help">
