@@ -30,7 +30,7 @@ export const generateCoffeeStory = async (): Promise<CoffeeStory> => {
   } catch (error) {
     console.error("Failed to generate coffee story:", error);
     return {
-      heading: "Damağınızda kalacak.",
+      heading: "Tadı damağınızda kalacak.",
       subtext: "Bir başkadır. (buraya slogan falan koyulacak.)",
       poeticDetail: "Kuzey'den gelen aroma. (aynı şekil, değişime açık)"
     };
