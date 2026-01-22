@@ -207,7 +207,7 @@ const App: React.FC = () => {
                 </video>
               </div>
               <h3 className="text-xl md:text-2xl font-serif mb-3 group-hover:text-amber-200 transition-colors">İmza Espresso'muz</h3>
-              <p className="text-[10px] tracking-[0.3em] text-white/40 uppercase mb-4 font-medium">YOĞUN • GÜÇLÜ • KARAMEL NOTALARI</p>
+              <p className="text-[10px] tracking-[0.3em] text-white/40 uppercase mb-4 font-medium">YOĞUN • GÜÇLÜ • AROMATİK NOTALAR</p>
               <p className="text-sm font-light text-white/60 leading-relaxed max-w-xs">Özel harman çekirdeklerimizden, damağınızda iz bırakacak yoğunlukta bir klasik.</p>
             </div>
 
