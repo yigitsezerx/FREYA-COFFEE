@@ -14,7 +14,7 @@ const App: React.FC = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [triggerRain, setTriggerRain] = useState(0);
   const [parallaxY, setParallaxY] = useState(0);
-  const [loadingText, setLoadingText] = useState("Harvesting the story...");
+  const [loadingText, setLoadingText] = useState("Hikayenizi yazıyoruz...");
   
   const videoRef = useRef<HTMLVideoElement>(null);
   const storyImageRef = useRef<HTMLDivElement>(null);
