@@ -235,7 +235,7 @@ const App: React.FC = () => {
           </div>
         </div>
         <div ref={storyImageRef} className="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden">
-           <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80&w=1200" className="w-full h-[120%] object-cover brightness-[0.4] transition-all duration-1000 absolute left-0" style={{ transform: `translateY(${parallaxY}px)` }} alt="Coffee Harvest" />
+           <img src="/puck.mp4" className="w-full h-[120%] object-cover brightness-[0.4] transition-all duration-1000 absolute left-0" style={{ transform: `translateY(${parallaxY}px)` }} alt="Coffee Harvest" />
         </div>
       </section>
 
