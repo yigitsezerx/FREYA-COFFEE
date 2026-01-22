@@ -15,7 +15,6 @@ const App: React.FC = () => {
   const [loadingText, setLoadingText] = useState("Hikayenizi yazıyoruz...");
   
   const videoRef = useRef<HTMLVideoElement>(null);
-  // Parallax ref'i kaldırıldı, artık ihtiyacımız yok.
 
   useEffect(() => {
     const fetchStory = async () => {
@@ -34,7 +33,6 @@ const App: React.FC = () => {
 
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 500);
-      // Parallax hesaplaması kaldırıldı
     };
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -173,7 +171,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Menu Section */}
+      {/* Menu Section - GÜNCELLENDİ (VİDEOLU + TÜRKÇE) */}
       <section id="menu" className="min-h-screen bg-[#080808] py-32 px-8 md:px-24">
         <div className="max-w-7xl mx-auto">
           <div className="mb-24 md:mb-32">
@@ -182,57 +180,70 @@ const App: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-0">
-            {/* Coffee Item 1 */}
+            
+            {/* ITEM 1: CAPPUCCINO */}
             <div className="group cursor-pointer border-b lg:border-b-0 lg:border-r border-white/5 pb-16 lg:pb-0 lg:pr-12 transition-all duration-700 animate-fade-in opacity-0 delay-100">
               <div className="aspect-[4/5] overflow-hidden mb-8 bg-white/5 relative">
-                <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000 ease-out" alt="Coffee" />
+                <video 
+                  autoPlay muted loop playsInline
+                  className="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000 ease-out"
+                >
+                  <source src="/cappucino.mp4" type="video/mp4" />
+                </video>
               </div>
-              <h3 className="text-xl md:text-2xl font-serif mb-3 group-hover:text-amber-200 transition-colors">Yirgacheffe Pour Over</h3>
-              <p className="text-[10px] tracking-[0.3em] text-white/40 uppercase mb-4 font-medium">Floral • Citrus • Tea-like</p>
-              <p className="text-sm font-light text-white/60 leading-relaxed max-w-xs">Hand-selected beans from Ethiopia's high altitude farms, roasted in our light Nordic style.</p>
+              <h3 className="text-xl md:text-2xl font-serif mb-3 group-hover:text-amber-200 transition-colors">Köpüklü Cappuccino</h3>
+              <p className="text-[10px] tracking-[0.3em] text-white/40 uppercase mb-4 font-medium">KADİFEMSİ • SÜTLÜ • DENGELİ</p>
+              <p className="text-sm font-light text-white/60 leading-relaxed max-w-xs">Usta baristalarımızın elinden, espresso ve mükemmel süt köpüğünün ipeksi uyumu.</p>
             </div>
 
-            {/* Coffee Item 2 */}
+            {/* ITEM 2: ESPRESSO */}
             <div className="group cursor-pointer border-b lg:border-b-0 lg:border-r border-white/5 py-16 lg:py-0 lg:px-12 transition-all duration-700 animate-fade-in opacity-0 delay-300">
               <div className="aspect-[4/5] overflow-hidden mb-8 bg-white/5 relative">
-                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000 ease-out" alt="Espresso" />
+                <video 
+                  autoPlay muted loop playsInline
+                  className="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000 ease-out"
+                >
+                  <source src="/espresso.mp4" type="video/mp4" />
+                </video>
               </div>
-              <h3 className="text-xl md:text-2xl font-serif mb-3 group-hover:text-amber-200 transition-colors">Signature Espresso</h3>
-              <p className="text-[10px] tracking-[0.3em] text-white/40 uppercase mb-4 font-medium">Dark Chocolate • Stone Fruit</p>
-              <p className="text-sm font-light text-white/60 leading-relaxed max-w-xs">Our house blend, balanced for a rich body and lingering sweetness.</p>
+              <h3 className="text-xl md:text-2xl font-serif mb-3 group-hover:text-amber-200 transition-colors">İmza Espresso'muz</h3>
+              <p className="text-[10px] tracking-[0.3em] text-white/40 uppercase mb-4 font-medium">YOĞUN • GÜÇLÜ • KARAMEL NOTALARI</p>
+              <p className="text-sm font-light text-white/60 leading-relaxed max-w-xs">Özel harman çekirdeklerimizden, damağınızda iz bırakacak yoğunlukta bir klasik.</p>
             </div>
 
-            {/* Dessert Item */}
+            {/* ITEM 3: SAN SEBASTIAN */}
             <div className="group cursor-pointer pt-16 lg:pt-0 lg:pl-12 transition-all duration-700 animate-fade-in opacity-0 delay-500">
               <div className="aspect-[4/5] overflow-hidden mb-8 bg-white/5 relative">
-                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000 ease-out" alt="Pastry" />
+                <video 
+                  autoPlay muted loop playsInline
+                  className="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000 ease-out"
+                >
+                  <source src="/cheesecake.mp4" type="video/mp4" />
+                </video>
               </div>
-              <h3 className="text-xl md:text-2xl font-serif mb-3 group-hover:text-amber-200 transition-colors">Cardamom Brioche</h3>
-              <p className="text-[10px] tracking-[0.3em] text-white/40 uppercase mb-4 font-medium">Buttery • Aromatic • Sweet</p>
-              <p className="text-sm font-light text-white/60 leading-relaxed max-w-xs">Freshly baked with organic spices and premium cultured butter.</p>
+              <h3 className="text-xl md:text-2xl font-serif mb-3 group-hover:text-amber-200 transition-colors">San Sebastian Cheesecake</h3>
+              <p className="text-[10px] tracking-[0.3em] text-white/40 uppercase mb-4 font-medium">AKIŞKAN • KREMAMSI • YANIK ÜST DOKU</p>
+              <p className="text-sm font-light text-white/60 leading-relaxed max-w-xs">İçi akışkan, dışı karamelize, her çatalda eriyen efsanevi lezzet.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Story Section - YENİLENMİŞ TAM EKRAN TASARIM */}
+      {/* Story Section - TAM EKRAN VİDEO */}
       <section id="story" className="relative w-screen h-screen overflow-hidden flex flex-col items-center justify-center">
-        {/* Arka Plan Videosu */}
         <div className="absolute inset-0 z-0 bg-black">
           <video 
             autoPlay 
             muted 
             loop 
             playsInline
-            className="w-full h-full object-cover brightness-[0.25]" // Okunabilirlik için parlaklık iyice kısıldı
+            className="w-full h-full object-cover brightness-[0.25]"
           >
             <source src="/puck.mp4" type="video/mp4" />
           </video>
-          {/* Ekstra Koyu Katman (Overlay) */}
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
-        {/* Yazı İçeriği */}
         <div className="relative z-10 w-full px-8 md:px-24 flex flex-col items-center justify-center text-center max-w-5xl mx-auto">
             <span className="text-amber-200/70 uppercase tracking-[0.5em] text-[10px] md:text-xs mb-8 block font-medium animate-fade-in opacity-0" style={{ animationDelay: '0.2s', opacity: 1 }}>
               Hikayemiz
@@ -284,7 +295,6 @@ const App: React.FC = () => {
           <p>© 2026 Freya Coffee. Tüm hakları saklıdır.</p>
           
           <div className="mt-8 md:mt-0 flex items-center justify-center">
-            {/* LOGOMARK */}
             <img 
                src="/menacesbrand.png" 
                alt="Freya Signature" 
