@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import { NavItem } from '../types';
 
 const navItems: NavItem[] = [
-  { label: 'Menu', href: '#menu' },
-  { label: 'Our Story', href: '#story' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Menü', href: '#menu' },
+  { label: 'Hikayemiz', href: '#story' },
+  { label: 'İletişim', href: '#contact' },
 ];
 
 const Navigation: React.FC = () => {

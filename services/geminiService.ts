@@ -5,7 +5,7 @@ import { CoffeeStory } from "../types";
 export const generateCoffeeStory = async (): Promise<CoffeeStory> => {
   const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   
-  const prompt = "Generate a short, poetic storytelling heading and subtext for a high-end coffee brand called 'Freya'. The background is a slow-motion video of rich espresso being poured. Focus on the sensory details: the golden crema, the aroma, and the soul of the bean.";
+  const prompt = "Generate a short, poetic storytelling heading and subtext for a high-end coffee brand called 'Freya Coffee'. The background is a slow-motion video of rich espresso being poured. Focus on the sensory details: the golden crema, the aroma, and the soul of the bean. Write this story in Turkish language.";
 
   try {
     const response = await ai.models.generateContent({
@@ -30,9 +30,9 @@ export const generateCoffeeStory = async (): Promise<CoffeeStory> => {
   } catch (error) {
     console.error("Failed to generate coffee story:", error);
     return {
-      heading: "The Golden Alchemy",
-      subtext: "Born from the earth's deepest secrets, every drop of Freya espresso is a testament to the patient dance between flame and bean.",
-      poeticDetail: "Captured in the amber light of dawn."
+      heading: "Freya Coffee'nin Simyası",
+      subtext: "Bir başkadır.",
+      poeticDetail: "Kuzey'den gelen aroma."
     };
   }
 };

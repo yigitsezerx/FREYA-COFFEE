@@ -27,7 +27,7 @@ const App: React.FC = () => {
     };
     fetchStory();
 
-    const phrases = ["Harvesting the story...", "Roasting the essence...", "Pouring the brew...", "Perfecting the crema..."];
+    const phrases = ["Kahvenizi hasat ediyoruz...", "Kahvenizi kavuruyoruz...", "Kahvenizi demliyoruz...", "Kahve kremanızı mükemmelleştiriyoruz..."];
     let phraseIdx = 0;
     const phraseInterval = setInterval(() => {
       phraseIdx = (phraseIdx + 1) % phrases.length;
@@ -110,7 +110,7 @@ const App: React.FC = () => {
             className="w-full h-full object-cover brightness-[0.35] transition-opacity duration-1000 ease-in-out"
             poster="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1920"
           >
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-pouring-coffee-into-a-cup-in-slow-motion-23467-large.mp4" type="video/mp4" />
+            <source src="/extraction.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black opacity-90 pointer-events-none"></div>
         </div>
@@ -120,7 +120,7 @@ const App: React.FC = () => {
             {!loading && story ? (
               <div className="max-w-4xl">
                 <span className="text-amber-200/80 uppercase tracking-[0.6em] text-[10px] md:text-xs mb-6 block animate-fade-in opacity-0">
-                  The Essence of Freya
+                  Freya Coffee'nin Ruhu.
                 </span>
                 <h2 className="text-4xl md:text-6xl lg:text-8xl font-serif italic mb-8 leading-[1.1] animate-fade-in delay-200 opacity-0 tracking-tight">
                   {story.heading}
@@ -148,7 +148,7 @@ const App: React.FC = () => {
           <div className="hidden lg:flex w-1/4 flex-col justify-center items-end text-right space-y-12 pointer-events-auto">
             {!loading && story && (
               <div className="animate-fade-in delay-700 opacity-0">
-                <h3 className="text-[10px] uppercase tracking-[0.4em] text-white/30 mb-3">Atmosphere</h3>
+                <h3 className="text-[10px] uppercase tracking-[0.4em] text-white/30 mb-3">Atmosferi nasıl mı?</h3>
                 <p className="text-base italic font-serif text-amber-100/30 leading-relaxed">
                   "{story.poeticDetail}"
                 </p>
@@ -168,7 +168,7 @@ const App: React.FC = () => {
             onClick={togglePlayback} 
             className="flex items-center space-x-4 text-[10px] uppercase tracking-[0.3em] text-white/50 hover:text-white transition-all duration-300 group"
           >
-            <span>{isPlaying ? 'Pause' : 'Play'}</span>
+            <span>{isPlaying ? 'Duraklat' : 'Oynat'}</span>
             <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:border-amber-200/40 transition-colors">
               {isPlaying ? (
                 <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" /></svg>
@@ -184,7 +184,7 @@ const App: React.FC = () => {
       <section id="menu" className="min-h-screen bg-[#080808] py-32 px-8 md:px-24">
         <div className="max-w-7xl mx-auto">
           <div className="mb-24 md:mb-32">
-            <h2 className="text-4xl md:text-6xl font-serif italic mb-6">The Selection</h2>
+            <h2 className="text-4xl md:text-6xl font-serif italic mb-6">Önerdiklerimiz</h2>
             <div className="h-px w-20 bg-amber-200/30"></div>
           </div>
 
@@ -226,7 +226,7 @@ const App: React.FC = () => {
       <section id="story" className="min-h-screen bg-black flex flex-col lg:flex-row items-center justify-center overflow-hidden">
         <div className="w-full lg:w-1/2 py-24 px-8 md:px-24">
           <div className="max-w-xl mx-auto lg:ml-auto lg:mr-0">
-            <span className="text-amber-200/70 uppercase tracking-[0.5em] text-[10px] mb-8 block font-medium">Our Legacy</span>
+            <span className="text-amber-200/70 uppercase tracking-[0.5em] text-[10px] mb-8 block font-medium"> Hikayemiz</span>
             <h2 className="text-5xl md:text-7xl font-serif italic mb-12 leading-[1.2] tracking-tight">Crafting the <br/>Quiet Moments</h2>
             <div className="space-y-8 text-lg font-light text-white/80 leading-[1.8] tracking-wide">
               <p>Freya began with a simple belief: that coffee is more than a beverage—it is a ritual, a connection to the earth, and a moment of solace.</p>
@@ -243,22 +243,22 @@ const App: React.FC = () => {
       <section id="contact" className="bg-[#050505] py-32 px-8 md:px-24 border-t border-white/5">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-24">
           <div>
-            <h2 className="text-3xl md:text-4xl font-serif italic mb-10">Visit Freya</h2>
+            <h2 className="text-3xl md:text-4xl font-serif italic mb-10">Bizi ziyaret edin</h2>
             <div className="space-y-6 text-[11px] md:text-xs tracking-[0.3em] text-white/40 uppercase font-medium">
-              <p className="hover:text-white transition-all duration-300">124 Nordic Way, Stockholm</p>
-              <p>Mon — Fri: 07:00 — 18:00</p>
-              <p>Sat — Sun: 09:00 — 17:00</p>
+              <p className="hover:text-white transition-all duration-300">Tam adres, Istanbul</p>
+              <p>Haftaiçi — 09:00 — 00:00</p>
+              <p>Haftasonu — 09:00 — 00:00</p>
             </div>
           </div>
 
           <div className="flex flex-col items-end text-right w-full md:w-auto">
-            <h2 className="text-3xl md:text-4xl font-serif italic mb-10">Inquiries</h2>
-            <a href="mailto:hello@freyacoffee.com" className="text-xl md:text-3xl text-white/70 hover:text-amber-200 transition-all duration-500 border-b border-white/10 pb-4 block">
+            <h2 className="text-3xl md:text-4xl font-serif italic mb-10">Bize ulaşın</h2>
+            <a href="mailto:iletisim@freyacoffee.com" className="text-xl md:text-3xl text-white/70 hover:text-amber-200 transition-all duration-500 border-b border-white/10 pb-4 block">
               hello@freyacoffee.com
             </a>
             <div className="flex flex-col items-end mt-16 space-y-2">
               <a 
-                href="https://www.instagram.com/freyacoffee" 
+                href="https://www.instagram.com/freya.coffeee" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="flex items-center space-x-3 text-[10px] uppercase tracking-[0.4em] text-white/30 font-medium hover:text-amber-200 transition-all duration-300 group"
@@ -273,7 +273,7 @@ const App: React.FC = () => {
         </div>
         
         <div className="mt-32 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[9px] uppercase tracking-[0.5em] text-white/20 font-medium">
-          <p>© 2024 Freya Coffee. All rights reserved.</p>
+          <p>© 2024 Freya Coffee. Tüm hakları saklıdır.</p>
           
           <div className="mt-8 md:mt-0 flex items-center justify-center">
             <div className="px-6 py-2.5 bg-white/[0.03] border border-white/5 rounded-sm flex items-center space-x-3 group hover:bg-white/[0.06] hover:border-amber-200/20 transition-all duration-700 cursor-help">
