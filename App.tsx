@@ -278,7 +278,7 @@ const App: React.FC = () => {
           <div className="mt-8 md:mt-0 flex items-center justify-center">
             {/* LOGOMARK DEĞİŞİKLİĞİ BURADA YAPILDI */}
             <img 
-               src="/logomark.png" 
+               src="/menacesbrand.png" 
                alt="Freya Signature" 
                className="h-10 w-auto opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-700 cursor-pointer"
             />
