@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from 'react';
 import LogoSquare from './components/LogoSquare';
 import Navigation from './components/Navigation';
@@ -21,6 +20,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const fetchStory = async () => {
+      // Not: Servis dosyasında prompt'u Türkçe yapmayı unutma
       const data = await generateCoffeeStory();
       setStory(data);
       setLoading(false);
@@ -120,7 +120,7 @@ const App: React.FC = () => {
             {!loading && story ? (
               <div className="max-w-4xl">
                 <span className="text-amber-200/80 uppercase tracking-[0.6em] text-[10px] md:text-xs mb-6 block animate-fade-in opacity-0">
-                  Freya Coffee'nin Ruhu.
+                  Freya'nın Ruhu
                 </span>
                 <h2 className="text-4xl md:text-6xl lg:text-8xl font-serif italic mb-8 leading-[1.1] animate-fade-in delay-200 opacity-0 tracking-tight">
                   {story.heading}
@@ -148,7 +148,7 @@ const App: React.FC = () => {
           <div className="hidden lg:flex w-1/4 flex-col justify-center items-end text-right space-y-12 pointer-events-auto">
             {!loading && story && (
               <div className="animate-fade-in delay-700 opacity-0">
-                <h3 className="text-[10px] uppercase tracking-[0.4em] text-white/30 mb-3">Atmosferi nasıl mı?</h3>
+                <h3 className="text-[10px] uppercase tracking-[0.4em] text-white/30 mb-3">Atmosfer</h3>
                 <p className="text-base italic font-serif text-amber-100/30 leading-relaxed">
                   "{story.poeticDetail}"
                 </p>
@@ -226,11 +226,11 @@ const App: React.FC = () => {
       <section id="story" className="min-h-screen bg-black flex flex-col lg:flex-row items-center justify-center overflow-hidden">
         <div className="w-full lg:w-1/2 py-24 px-8 md:px-24">
           <div className="max-w-xl mx-auto lg:ml-auto lg:mr-0">
-            <span className="text-amber-200/70 uppercase tracking-[0.5em] text-[10px] mb-8 block font-medium"> Hikayemiz</span>
-            <h2 className="text-5xl md:text-7xl font-serif italic mb-12 leading-[1.2] tracking-tight">Crafting the <br/>Quiet Moments</h2>
+            <span className="text-amber-200/70 uppercase tracking-[0.5em] text-[10px] mb-8 block font-medium">Hikayemiz</span>
+            <h2 className="text-5xl md:text-7xl font-serif italic mb-12 leading-[1.2] tracking-tight">Huzurlu Anların <br/>Mimarı</h2>
             <div className="space-y-8 text-lg font-light text-white/80 leading-[1.8] tracking-wide">
-              <p>Freya began with a simple belief: that coffee is more than a beverage—it is a ritual, a connection to the earth, and a moment of solace.</p>
-              <p>Our journey seeks farmers who treat their crop with the same reverence we treat our light Nordic roast, preserving the delicate floral notes born of volcanic soil.</p>
+              <p>Freya basit bir inançla doğdu: Kahve sadece bir içecek değil; toprağa bir dokunuş, bir ritüel ve kendinle baş başa kaldığın o özel andır.</p>
+              <p>Volkanik toprakların bereketini, İskandinav kavurma sanatının inceliğiyle buluşturuyoruz. Amacımız, doğaya duyduğumuz saygıyı fincanınızdaki her notada hissettirmek.</p>
             </div>
           </div>
         </div>
@@ -276,12 +276,12 @@ const App: React.FC = () => {
           <p>© 2026 Freya Coffee. Tüm hakları saklıdır.</p>
           
           <div className="mt-8 md:mt-0 flex items-center justify-center">
-            <div className="px-6 py-2.5 bg-white/[0.03] border border-white/5 rounded-sm flex items-center space-x-3 group hover:bg-white/[0.06] hover:border-amber-200/20 transition-all duration-700 cursor-help">
-              <div className="w-4 h-4 rounded-full border border-white/10 flex items-center justify-center text-[7px] text-white/30 group-hover:text-amber-200/50 transition-colors">
-                +
-              </div>
-              <span className="text-[8px] text-white/20 group-hover:text-white/40 transition-colors uppercase tracking-[0.3em]">Logo Space</span>
-            </div>
+            {/* LOGOMARK DEĞİŞİKLİĞİ BURADA YAPILDI */}
+            <img 
+               src="/logomark.png" 
+               alt="Freya Signature" 
+               className="h-10 w-auto opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-700 cursor-pointer"
+            />
           </div>
         </div>
       </section>
