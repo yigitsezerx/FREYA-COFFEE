@@ -70,7 +70,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="bg-black text-white selection:bg-amber-200/30">
+    <div className="bg-black text-white selection:bg-amber-200/30 font-sans">
       <LogoSquare onEasterEggTriggered={handleEasterEgg} />
       <Navigation />
       
@@ -78,7 +78,7 @@ const App: React.FC = () => {
 
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-8 left-8 z-50 p-4 rounded-full border border-white/10 bg-black/40 backdrop-blur-md transition-all duration-500 hover:border-amber-200/50 group ${
+        className={`fixed bottom-6 right-6 md:bottom-8 md:left-8 z-50 p-3 md:p-4 rounded-full border border-white/10 bg-black/40 backdrop-blur-md transition-all duration-500 hover:border-amber-200/50 group ${
           showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
         }`}
         aria-label="Scroll to top"
@@ -106,17 +106,17 @@ const App: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black opacity-90 pointer-events-none"></div>
         </div>
 
-        <div className="relative z-10 w-full h-full px-8 md:px-24 flex flex-col md:flex-row items-center justify-between pointer-events-none max-w-7xl mx-auto">
-          <div className="w-full md:w-3/4 lg:w-3/5 flex flex-col justify-center space-y-6 pointer-events-auto mt-20 md:mt-0">
+        <div className="relative z-10 w-full h-full px-6 md:px-24 flex flex-col md:flex-row items-center justify-between pointer-events-none max-w-7xl mx-auto">
+          <div className="w-full md:w-3/4 lg:w-3/5 flex flex-col justify-center space-y-4 md:space-y-6 pointer-events-auto mt-12 md:mt-0">
             {!loading && story ? (
-              <div className="max-w-4xl">
-                <span className="text-amber-200/80 uppercase tracking-[0.6em] text-[10px] md:text-xs mb-6 block animate-fade-in opacity-0">
+              <div className="max-w-4xl text-center md:text-left">
+                <span className="text-amber-200/80 uppercase tracking-[0.4em] md:tracking-[0.6em] text-[10px] md:text-xs mb-4 md:mb-6 block animate-fade-in opacity-0">
                   Freya'nın Ruhu
                 </span>
-                <h2 className="text-4xl md:text-6xl lg:text-8xl font-serif italic mb-8 leading-[1.1] animate-fade-in delay-200 opacity-0 tracking-tight">
+                <h2 className="text-4xl md:text-6xl lg:text-8xl font-serif italic mb-6 md:mb-8 leading-[1.1] animate-fade-in delay-200 opacity-0 tracking-tight">
                   {story.heading}
                 </h2>
-                <p className="text-base md:text-xl font-light text-white/80 max-w-lg leading-relaxed border-l border-amber-200/20 pl-8 animate-fade-in delay-400 opacity-0">
+                <p className="text-sm md:text-xl font-light text-white/80 max-w-lg leading-relaxed md:border-l border-amber-200/20 md:pl-8 mx-auto md:mx-0 animate-fade-in delay-400 opacity-0">
                   {story.subtext}
                 </p>
               </div>
@@ -128,7 +128,7 @@ const App: React.FC = () => {
                   </span>
                   <div className="h-16 md:h-24 w-full bg-white/5 animate-pulse rounded-sm"></div>
                 </div>
-                <div className="space-y-3 pl-8 border-l border-white/5">
+                <div className="space-y-3 pl-8 border-l border-white/5 hidden md:block">
                   <div className="h-3 w-full bg-white/5 animate-pulse rounded-full"></div>
                   <div className="h-3 w-5/6 bg-white/5 animate-pulse delay-75 rounded-full"></div>
                 </div>
@@ -148,13 +148,13 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-40 right-10 md:right-18 lg:right-24 z-20 hidden md:flex flex-col items-center">
-          <div className="w-[1px] h-32 md:h-48 bg-white/5 relative overflow-hidden">
+        <div className="absolute bottom-24 md:bottom-40 right-6 md:right-24 z-20 hidden md:flex flex-col items-center">
+          <div className="w-[1px] h-24 md:h-48 bg-white/5 relative overflow-hidden">
              <div className="absolute top-0 left-0 w-full h-full bg-amber-200/30 animate-scroll-line"></div>
           </div>
         </div>
 
-        <div className="absolute bottom-12 left-8 md:left-auto md:right-24 z-20 animate-fade-in delay-1000 opacity-0 pointer-events-auto">
+        <div className="absolute bottom-8 left-6 md:left-auto md:right-24 z-20 animate-fade-in delay-1000 opacity-0 pointer-events-auto">
           <button 
             onClick={togglePlayback} 
             className="flex items-center space-x-4 text-[10px] uppercase tracking-[0.3em] text-white/50 hover:text-white transition-all duration-300 group"
@@ -171,22 +171,22 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Menu Section - GÜNCELLENDİ (VİDEOLU + TÜRKÇE) */}
-      <section id="menu" className="min-h-screen bg-[#080808] py-32 px-8 md:px-24">
+      {/* Menu Section */}
+      <section id="menu" className="min-h-screen bg-[#080808] py-20 md:py-32 px-6 md:px-24">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-24 md:mb-32">
-            <h2 className="text-4xl md:text-6xl font-serif italic mb-6">Önerdiklerimiz</h2>
+          <div className="mb-16 md:mb-32">
+            <h2 className="text-3xl md:text-6xl font-serif italic mb-6">Önerdiklerimiz</h2>
             <div className="h-px w-20 bg-amber-200/30"></div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-0">
             
             {/* ITEM 1: CAPPUCCINO */}
-            <div className="group cursor-pointer border-b lg:border-b-0 lg:border-r border-white/5 pb-16 lg:pb-0 lg:pr-12 transition-all duration-700 animate-fade-in opacity-0 delay-100">
+            <div className="group cursor-pointer border-b border-white/5 pb-16 lg:pb-0 lg:border-b-0 lg:border-r lg:pr-12 transition-all duration-700 animate-fade-in opacity-0 delay-100">
               <div className="aspect-[4/5] overflow-hidden mb-8 bg-white/5 relative">
                 <video 
                   autoPlay muted loop playsInline
-                  className="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000 ease-out"
+                  className="w-full h-full object-cover opacity-60 md:opacity-50 grayscale md:grayscale group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000 ease-out"
                 >
                   <source src="/cappucino.mp4" type="video/mp4" />
                 </video>
@@ -197,11 +197,11 @@ const App: React.FC = () => {
             </div>
 
             {/* ITEM 2: ESPRESSO */}
-            <div className="group cursor-pointer border-b lg:border-b-0 lg:border-r border-white/5 py-16 lg:py-0 lg:px-12 transition-all duration-700 animate-fade-in opacity-0 delay-300">
+            <div className="group cursor-pointer border-b border-white/5 py-16 lg:py-0 lg:border-b-0 lg:border-r lg:px-12 transition-all duration-700 animate-fade-in opacity-0 delay-300">
               <div className="aspect-[4/5] overflow-hidden mb-8 bg-white/5 relative">
                 <video 
                   autoPlay muted loop playsInline
-                  className="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000 ease-out"
+                  className="w-full h-full object-cover opacity-60 md:opacity-50 grayscale md:grayscale group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000 ease-out"
                 >
                   <source src="/espresso.mp4" type="video/mp4" />
                 </video>
@@ -216,7 +216,7 @@ const App: React.FC = () => {
               <div className="aspect-[4/5] overflow-hidden mb-8 bg-white/5 relative">
                 <video 
                   autoPlay muted loop playsInline
-                  className="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000 ease-out"
+                  className="w-full h-full object-cover opacity-60 md:opacity-50 grayscale md:grayscale group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000 ease-out"
                 >
                   <source src="/cheesecake.mp4" type="video/mp4" />
                 </video>
@@ -229,7 +229,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Story Section - TAM EKRAN VİDEO */}
+      {/* Story Section */}
       <section id="story" className="relative w-screen h-screen overflow-hidden flex flex-col items-center justify-center">
         <div className="absolute inset-0 z-0 bg-black">
           <video 
@@ -244,38 +244,38 @@ const App: React.FC = () => {
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
-        <div className="relative z-10 w-full px-8 md:px-24 flex flex-col items-center justify-center text-center max-w-5xl mx-auto">
-            <span className="text-amber-200/70 uppercase tracking-[0.5em] text-[10px] md:text-xs mb-8 block font-medium animate-fade-in opacity-0" style={{ animationDelay: '0.2s', opacity: 1 }}>
+        <div className="relative z-10 w-full px-6 md:px-24 flex flex-col items-center justify-center text-center max-w-5xl mx-auto">
+            <span className="text-amber-200/70 uppercase tracking-[0.4em] md:tracking-[0.5em] text-[10px] md:text-xs mb-6 md:mb-8 block font-medium animate-fade-in opacity-0" style={{ animationDelay: '0.2s', opacity: 1 }}>
               Hikayemiz
             </span>
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif italic mb-12 leading-[1.1] tracking-tight animate-fade-in opacity-0" style={{ animationDelay: '0.4s', opacity: 1 }}>
+            <h2 className="text-4xl md:text-7xl lg:text-8xl font-serif italic mb-8 md:mb-12 leading-[1.1] tracking-tight animate-fade-in opacity-0" style={{ animationDelay: '0.4s', opacity: 1 }}>
               Huzurlu Anların <br/>Mimarı
             </h2>
-            <div className="space-y-8 text-lg md:text-xl font-light text-white/90 leading-[1.8] tracking-wide max-w-3xl mx-auto animate-fade-in opacity-0" style={{ animationDelay: '0.6s', opacity: 1 }}>
+            <div className="space-y-6 md:space-y-8 text-base md:text-xl font-light text-white/90 leading-[1.6] md:leading-[1.8] tracking-wide max-w-xs md:max-w-3xl mx-auto animate-fade-in opacity-0" style={{ animationDelay: '0.6s', opacity: 1 }}>
               <p>Freya basit bir inançla doğdu: Kahve sadece bir içecek değil; toprağa bir dokunuş, bir ritüel ve kendinle baş başa kaldığın o özel andır.</p>
-              <p>Volkanik toprakların bereketini, İskandinav kavurma sanatının inceliğiyle buluşturuyoruz. Amacımız, doğaya duyduğumuz saygıyı fincanınızdaki her notada hissettirmek.</p>
+              <p className="hidden md:block">Volkanik toprakların bereketini, İskandinav kavurma sanatının inceliğiyle buluşturuyoruz. Amacımız, doğaya duyduğumuz saygıyı fincanınızdaki her notada hissettirmek.</p>
             </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="bg-[#050505] py-32 px-8 md:px-24 border-t border-white/5">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-24">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-serif italic mb-10">Bizi ziyaret edin</h2>
-            <div className="space-y-6 text-[11px] md:text-xs tracking-[0.3em] text-white/40 uppercase font-medium">
+      <section id="contact" className="bg-[#050505] py-20 md:py-32 px-6 md:px-24 border-t border-white/5">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-16 md:gap-24">
+          <div className="w-full md:w-auto">
+            <h2 className="text-2xl md:text-4xl font-serif italic mb-6 md:mb-10">Bizi ziyaret edin</h2>
+            <div className="space-y-4 md:space-y-6 text-[10px] md:text-xs tracking-[0.3em] text-white/40 uppercase font-medium">
               <p className="hover:text-white transition-all duration-300">Tam adres buraya yazılacak, Istanbul</p>
               <p>Haftaiçi — 09:00 — 00:00</p>
               <p>Haftasonu — 09:00 — 00:00</p>
             </div>
           </div>
 
-          <div className="flex flex-col items-end text-right w-full md:w-auto">
-            <h2 className="text-3xl md:text-4xl font-serif italic mb-10">Bize ulaşın</h2>
-            <a href="mailto:iletisim@freyacoffee.com" className="text-xl md:text-3xl text-white/70 hover:text-amber-200 transition-all duration-500 border-b border-white/10 pb-4 block">
+          <div className="flex flex-col items-start md:items-end text-left md:text-right w-full md:w-auto">
+            <h2 className="text-2xl md:text-4xl font-serif italic mb-6 md:mb-10">Bize ulaşın</h2>
+            <a href="mailto:iletisim@freyacoffee.com" className="text-lg md:text-3xl text-white/70 hover:text-amber-200 transition-all duration-500 border-b border-white/10 pb-4 block w-full md:w-auto">
               hello@freyacoffee.com
             </a>
-            <div className="flex flex-col items-end mt-16 space-y-2">
+            <div className="flex flex-col items-start md:items-end mt-10 md:mt-16 space-y-2">
               <a 
                 href="https://www.instagram.com/freya.coffeee" 
                 target="_blank" 
@@ -291,14 +291,14 @@ const App: React.FC = () => {
           </div>
         </div>
         
-        <div className="mt-32 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[9px] uppercase tracking-[0.5em] text-white/20 font-medium">
+        <div className="mt-20 md:mt-32 pt-12 border-t border-white/5 flex flex-col-reverse md:flex-row justify-between items-center text-[9px] uppercase tracking-[0.5em] text-white/20 font-medium gap-8 md:gap-0">
           <p>© 2026 Freya Coffee. Tüm hakları saklıdır.</p>
           
-          <div className="mt-8 md:mt-0 flex items-center justify-center">
+          <div className="flex items-center justify-center">
             <img 
                src="/menacesbrand.png" 
                alt="Freya Signature" 
-               className="h-10 w-auto opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-700 cursor-pointer"
+               className="h-8 md:h-10 w-auto opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-700 cursor-pointer"
             />
           </div>
         </div>
