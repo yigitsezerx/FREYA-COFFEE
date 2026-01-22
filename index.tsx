@@ -1,7 +1,7 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import TVMenu from './TVMenu'; // Yeni oluşturduğumuz TV menüsü dosyasını çağırıyoruz
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -9,8 +9,21 @@ if (!rootElement) {
 }
 
 const root = ReactDOM.createRoot(rootElement);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+
+// Tarayıcıdaki adresi kontrol et (Örn: /tv mi yazıyor?)
+const path = window.location.pathname;
+
+// Eğer adres "/tv" ise TV Menüsünü, değilse Ana Uygulamayı (App) göster
+if (path === '/tv' || path === '/tv/') {
+  root.render(
+    <React.StrictMode>
+      <TVMenu />
+    </React.StrictMode>
+  );
+} else {
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+}
