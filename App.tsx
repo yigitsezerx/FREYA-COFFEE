@@ -245,7 +245,7 @@ const App: React.FC = () => {
           <div>
             <h2 className="text-3xl md:text-4xl font-serif italic mb-10">Bizi ziyaret edin</h2>
             <div className="space-y-6 text-[11px] md:text-xs tracking-[0.3em] text-white/40 uppercase font-medium">
-              <p className="hover:text-white transition-all duration-300">Tam adres, Istanbul</p>
+              <p className="hover:text-white transition-all duration-300">Tam adres buraya yazılacak, Istanbul</p>
               <p>Haftaiçi — 09:00 — 00:00</p>
               <p>Haftasonu — 09:00 — 00:00</p>
             </div>
