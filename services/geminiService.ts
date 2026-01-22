@@ -30,9 +30,9 @@ export const generateCoffeeStory = async (): Promise<CoffeeStory> => {
   } catch (error) {
     console.error("Failed to generate coffee story:", error);
     return {
-      heading: "Freya Coffee'nin Simyası",
-      subtext: "Bir başkadır.",
-      poeticDetail: "Kuzey'den gelen aroma."
+      heading: "Damağınızda kalacak.",
+      subtext: "Bir başkadır. (buraya slogan falan koyulacak.)",
+      poeticDetail: "Kuzey'den gelen aroma. (aynı şekil, değişime açık)"
     };
   }
 };
