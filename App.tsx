@@ -235,7 +235,17 @@ const App: React.FC = () => {
           </div>
         </div>
         <div ref={storyImageRef} className="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden">
-           <img src="/puck.mp4" className="w-full h-[120%] object-cover brightness-[0.4] transition-all duration-1000 absolute left-0" style={{ transform: `translateY(${parallaxY}px)` }} alt="Coffee Harvest" />
+          {/* VİDEO DÜZELTİLDİ: Artık video tag kullanılıyor */}
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            className="w-full h-[120%] object-cover brightness-[0.4] transition-all duration-1000 absolute left-0" 
+            style={{ transform: `translateY(${parallaxY}px)` }} 
+          >
+            <source src="/puck.mp4" type="video/mp4" />
+          </video>
         </div>
       </section>
 
@@ -276,7 +286,7 @@ const App: React.FC = () => {
           <p>© 2026 Freya Coffee. Tüm hakları saklıdır.</p>
           
           <div className="mt-8 md:mt-0 flex items-center justify-center">
-            {/* LOGOMARK DEĞİŞİKLİĞİ BURADA YAPILDI */}
+            {/* LOGOMARK BURADA GÜNCELLENDİ */}
             <img 
                src="/menacesbrand.png" 
                alt="Freya Signature" 
